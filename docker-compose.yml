@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    container_name: frontend_despacho
+    environment:
+      - BACKEND_URL=${BACKEND_URL}
+    ports:
+      - "80:80"
+    networks:
+      - frontend_net
+
+networks:
+  frontend_net:
+    driver: bridge
