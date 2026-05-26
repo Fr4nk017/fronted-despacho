@@ -34,5 +34,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/frontend-despacho:latest
+            cd ~/app
             docker-compose down
             docker-compose up -d
